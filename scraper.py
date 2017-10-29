@@ -1,5 +1,6 @@
 import urllib2
 import sys
+import time
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
@@ -48,13 +49,16 @@ if movie_name.lower() == search_input.lower() :
 
 	for episode_link in episode_links:
 		browser.get(episode_link)
-		browser.findElement(By.cssSelector('.cover::before')).click();
-		print "Waiting for page to load... \n"
-		WebDriverWait(browser,10)
+		element = WebDriverWait(browser,10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id='player']")))
+		print "Page loaded... Clicking now"
+		browser.save_screenshot('beforeclick.png')
 		#try:
-		#	video = browser.find_element_by_xpath('//*[@id="jw"]/div[2]/video')
-		#except Exception,e:
-		browser.save_screenshot('screenshot.png')
+		print browser.find_element_by_css_selector("div.cover").text
+		#except WebDriverException:
+		#	print "Element not clickable"			
+		#WebDriverWait(browser,120).until(EC.presence_of_element_located((By.XPATH, "//*[@id='jw']/div[2]/video")))
+		#print "Waiting for page to load..."
+		#print browser.find_element_by_xpath("//*[@id='jw']/div[2]/video").get_attribute('src')		
 
 	browser.close()
 	browser.quit()	
