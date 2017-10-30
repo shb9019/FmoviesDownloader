@@ -6,6 +6,7 @@ A Super Simple Script to download movies and series from Fmovies to save yoursel
 - [Setup](https://github.com/shb9019/FmoviesDownloader#setup)
 - [Features](https://github.com/shb9019/FmoviesDownloader#features)
 - [Usage](https://github.com/shb9019/FmoviesDownloader#usage)
+- [Credits](https://github.com/shb9019/FmoviesDownloader#credits)
 
 ## Setup
 
@@ -16,7 +17,7 @@ A Super Simple Script to download movies and series from Fmovies to save yoursel
 - Install Selenium `sudo pip install selenium`
 - Download [Selenium](https://github.com/mozilla/geckodriver/releases) and extract the driver to your folder
 
-You are all Set :)
+You are all Set :smiley:
 
 ## Features
 
@@ -27,4 +28,8 @@ You are all Set :)
 
 Download movie/series by
 `sudo ./scraper.sh "search_name" d`
-  
+
+##Credits
+
+Idea by [Deep Bhattacharyya](https://github.com/coderick14)
+Made with :heart: by [Sai Hemanth](https://github.com/shb9019)
