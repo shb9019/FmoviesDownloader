@@ -1,3 +1,3 @@
 #!/bin/bash
 
-wget -P /home/sai9019/Downloads/Series/$2 $1
+wget -P /home/Downloads/Series/$2 $1

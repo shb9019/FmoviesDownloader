@@ -3,6 +3,7 @@ import sys
 import time
 import shlex
 import subprocess
+import os
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
@@ -10,7 +11,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
-
 
 search_input = sys.argv[1]
 stream_method = sys.argv[2]
@@ -23,17 +23,20 @@ search_string = search_string.rstrip('+')
 
 print "Searching for " + search_input + "..."
 
+file_name = 'geckodriver'
+
 path_name = 'https://fmovies.se/search?keyword=' + search_string
 hdr = {'User-Agent': 'Mozilla/5.0'}
 req = urllib2.Request(path_name,headers = hdr)
 page = urllib2.urlopen(req)
 soup = BeautifulSoup(page,'html.parser')
-browser = webdriver.Firefox(executable_path = '/home/sai9019/FmoviesDownloader/geckodriver')
+
+browser = webdriver.Firefox(executable_path = os.path.abspath(file_name))
 movie_box = soup.find('a',attrs = {'class':'name'})
 movie_name = movie_box.text.strip()
 
 if movie_name.lower() == search_input.lower() :
-	print "Requested Movie/Series is Available\n\n"
+	print "Requested Movie/Series is Available\n"
 	print "Proceeding to Obtain Links..."
 	path_name = 'https://fmovies.se' + movie_box.get('href')
 	req = urllib2.Request(path_name,headers = hdr)
