@@ -29,7 +29,7 @@ You are all Set :smiley:
 Download movie/series by
 `sudo ./scraper.sh "search_name" d`
 
-##Credits
+## Credits
 
 Idea by [Deep Bhattacharyya](https://github.com/coderick14)
 Made with :heart: by [Sai Hemanth](https://github.com/shb9019)
