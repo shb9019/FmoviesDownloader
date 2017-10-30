@@ -31,5 +31,5 @@ Download movie/series by
 
 ## Credits
 
-Idea by [Deep Bhattacharyya](https://github.com/coderick14)\s\s
+Idea by [Deep Bhattacharyya](https://github.com/coderick14) <br />
 Made with :heart: by [Sai Hemanth](https://github.com/shb9019)
